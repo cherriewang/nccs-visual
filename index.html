@@ -114,11 +114,41 @@
   </div>
 
   <div id="currentInfo">
-    <span id="year1990" class="year">1990</span>
+    <!--<span id="year1990" class="year">1990</span>
     <span id="year1995" class="year">1995</span>
-    <span id="year2000" class="year">2000</span>
+    <span id="year2000" class="year">2000</span>-->
     <span>
-      
+      <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+        <dropdown>
+            <input id="toggle1" type="checkbox" checked>
+            <label for="toggle1" class="animate">Select Dates<i class="fa fa-bars float-right"></i></label>
+            <ul class="animate">
+              
+          <!-- calendar  -->
+          <h1 class="center"></h1>
+          <div class="calendar">
+            <div class="group">
+              <p class="left pointer minusmonth">&laquo;</p>
+              <p class="left monthname center pointer"></p>
+              <p class="right pointer addmonth">&raquo;</p>
+            </div>
+            <ul class="group">
+              <li>Mo</li>
+              <li>Tu</li>
+              <li>We</li>
+              <li>Th</li>
+              <li>Fr</li>
+              <li>Sa</li>
+              <li>Su</li>
+            </ul>
+          </div>
+
+            </ul>
+        </dropdown>      
+
+
+      <!-- OLD DROPDOWN
         <div id="dd" class="wrapper-dropdown-2">Go to date: <ul class="dropdown">
           <h1 class="center">Select Dates</h1>
             
@@ -139,6 +169,7 @@
               </ul>
             </div>
        </div>
+      -->
       </span>
   </div>
 
@@ -152,7 +183,7 @@
   </a> -->
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/nccs-visual/third-party/Dropdown.js"></script>
+  <!--<script type="text/javascript" src="/nccs-visual/third-party/Dropdown.js"></script>-->
   <script type="text/javascript" src="/nccs-visual/third-party/Calendar.js"></script>
   <script type="text/javascript" src="/nccs-visual/third-party/Detector.js"></script>
   <script type="text/javascript" src="/nccs-visual/third-party/three.min.js"></script>
