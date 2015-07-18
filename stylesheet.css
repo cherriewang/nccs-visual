@@ -9,6 +9,15 @@
 }
 
 
+
+/* timeline positioning */
+#timeline {
+    bottom: 40px;
+    left: 50%;
+    margin-left: -350px;
+}
+
+
 /* dropdown calendar */
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300);
