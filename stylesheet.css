@@ -8,7 +8,10 @@
     height: 150px; 
 }
 
-
+/* temp video stuff */
+video {
+  display: none;
+}
 
 /* timeline positioning */
 #timeline {
