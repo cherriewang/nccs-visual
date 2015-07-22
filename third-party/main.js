@@ -26,13 +26,13 @@ function toggleQuality(caller){
 	
 	if( quality === 'low' ){
 		quality = 'high';		
-		video.src = 'http://ec2-52-2-202-69.compute-1.amazonaws.com/my.webm';
+		video.src = '/my.webm';
 		video.addEventListener('loadedmetadata', loadStart, false );
 		
 	}
 	else{
 		quality = 'low';
-		video.src = 'http://ec2-52-2-202-69.compute-1.amazonaws.com/my.webm';
+		video.src = '/my.webm';
 		video.addEventListener('loadedmetadata', loadStart, false );
 	}
 

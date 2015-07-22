@@ -67,6 +67,8 @@ DAT.Globe = function(container, opts) {
 
   var overRenderer;
 
+  var video;
+
   var curZoomSpeed = 0;
   var zoomSpeed = 50;
 
@@ -78,6 +80,10 @@ DAT.Globe = function(container, opts) {
   var distance = 100000, distanceTarget = 100000;
   var padding = 40;
   var PI_HALF = Math.PI / 2;
+
+  ////////////////////////
+  //    INIT FUNCTION
+  ////////////////////////
 
   function init() {
 
@@ -99,8 +105,63 @@ DAT.Globe = function(container, opts) {
     uniforms = THREE.UniformsUtils.clone(shader.uniforms);
 
     //uniforms['texture'].value = THREE.ImageUtils.loadTexture(imgDir+'simple.jpg');
-    uniforms['texture'].value = THREE.ImageUtils.loadTexture(imgDir+'my.webm');
+    //uniforms['texture'].value = THREE.ImageUtils.loadTexture(imgDir+'my.webm');
+
+    ///////////
+    // VIDEO 
+    ///////////
     
+    // create the video element
+    video = document.createElement( 'video' );
+    // video.id = 'video';
+    // video.type = ' video/ogg; codecs="theora, vorbis" ';
+    video.src = "/my.webm";
+    video.load(); // must call after setting/changing source
+    video.play();
+    
+    // alternative method -- 
+    // create DIV in HTML:
+    // <video id="myVideo" autoplay style="display:none">
+    //    <source src="videos/sintel.ogv" type='video/ogg; codecs="theora, vorbis"'>
+    // </video>
+    // and set JS variable:
+    // video = document.getElementById( 'myVideo' );
+
+
+
+
+  //////////////////////////////
+  // INSERTING VIDEO STUFF HERE
+  //////////////////////////////
+
+      videoImage = document.createElement( 'canvas' );
+      videoImage.width = 4096;
+      videoImage.height = 2049;
+
+      videoImageContext = videoImage.getContext( '2d' );
+      // background color if no video present
+      //videoImageContext.fillStyle = '#000000';
+      //videoImageContext.fillRect( 0, 0, videoImage.width, videoImage.height );
+
+      videoTexture = new THREE.Texture( videoImage );
+      videoTexture.minFilter = THREE.LinearFilter;
+      videoTexture.magFilter = THREE.LinearFilter;
+      
+      var movieMaterial = new THREE.MeshBasicMaterial( { map: videoTexture, overdraw: true, side:THREE.DoubleSide } );
+      // the geometry on which the movie will be displayed;
+      //    movie image will be scaled to fit these dimensions.
+      var movieGeometry = new THREE.SphereGeometry(200, 40, 30);
+      var movieScreen = new THREE.Mesh( movieGeometry, movieMaterial );
+      movieScreen.position.set(0,50,0);
+      scene.add(movieScreen);
+      
+      camera.position.set(0,150,300);
+      camera.lookAt(movieScreen.position);
+
+    ///////////////////////////////
+    // END VIDEO STUFF
+    ///////////////////////////////
+
 
     material = new THREE.ShaderMaterial({
 
@@ -159,6 +220,8 @@ DAT.Globe = function(container, opts) {
     container.addEventListener('mouseout', function() {
       overRenderer = false;
     }, false);
+
+
   }
 
   function addData(data, opts) {
@@ -213,6 +276,7 @@ DAT.Globe = function(container, opts) {
 
   };
 
+  /*
   function createPoints() {
     if (this._baseGeometry !== undefined) {
       if (this.is_animated === false) {
@@ -239,6 +303,7 @@ DAT.Globe = function(container, opts) {
       }
       //scene.add(this.points);
     }
+    */
   }
 
   function addPoint(lat, lng, size, color, subgeo) {
@@ -344,6 +409,10 @@ DAT.Globe = function(container, opts) {
   function animate() {
     requestAnimationFrame(animate);
     render();
+     // VIDEO RELATED
+     //requestAnimationFrame( animate );
+     //render();   
+     //update();
   }
 
   function render() {
@@ -360,6 +429,20 @@ DAT.Globe = function(container, opts) {
     camera.lookAt(mesh.position);
 
     renderer.render(scene, camera);
+
+    
+     //V VIDEO RELATED
+     if ( video.readyState === video.HAVE_ENOUGH_DATA ) 
+     {
+       videoImageContext.drawImage( video, 0, 0 );
+     if ( videoTexture ) 
+       videoTexture.needsUpdate = true;
+     }
+
+     renderer.render( scene, camera );
+
+
+
   }
 
   init();
