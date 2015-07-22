@@ -37,8 +37,8 @@ body {
 }
 
 #title-bg {
-  width: 522px;
-  height: 135px;
+  width: 400px;
+  height: 103px;
   position: absolute;
   left:30px;
   top: 27px;
@@ -50,21 +50,22 @@ body {
   border-radius: 10px;
 }
 
+
 #title {
-  font-size: 26px;
+  font-size: 16px;
   position: absolute;
-  padding: 36px 46px 13px 36px;
+  padding: 30px 46px 13px 36px;
   left: 76px;
   top: 0px;
 
-  border-bottom: 2px solid #999999
+  border-bottom: 1px solid #999999
 }
 
 #date-label {
-  font-size: 18px;
+  font-size: 14px;
   position: absolute;
-  left: 162px;
-  top: 90px;
+  left: 126px;
+  top: 70px;
 }
 
 #date-select {
@@ -72,10 +73,10 @@ body {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  font-size: 18px;
+  font-size: 14px;
   position: absolute;
-  left: 260px;
-  top: 90px;
+  left: 205px;
+  top: 70px;
 
   color: #cccccc;
   border-bottom: 2px dashed #cccccc;
@@ -88,11 +89,11 @@ body {
 }
 
 #logo {
-  height: 80px;
+  height: 75px;
   width: auto;
   position: relative;
-  left: 15px;
-  top: 15px;
+  left: 9px;
+  top: 14px;
 }
 
 #timeline-bg {
