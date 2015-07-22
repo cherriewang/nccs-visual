@@ -112,7 +112,7 @@ body {
 
 #marker-bg {
   height: 36px;
-  width: 350px;
+  width: 325px;
   position: absolute;
   right: 0; left: 0;
   margin: auto;
@@ -127,7 +127,7 @@ body {
 }
 
 #marker {
-  font: 18px Georgia;
+  font: 14px Georgia;
   
   display: inline-block;
   vertical-align: middle;
