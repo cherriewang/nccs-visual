@@ -5,6 +5,13 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  */
 
+//  NOTES TO SELF: 
+//  CHECK THREE.DoubleSide
+//  replay function
+//  html coding for timeline
+//  video recompression
+
+
 var DAT = DAT || {};
 
 DAT.Globe = function(container, opts) {
