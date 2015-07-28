@@ -130,7 +130,7 @@ DAT.Globe = function(container, opts) {
     video = document.createElement( 'video' );
     // video.id = 'video';
     // video.type = ' video/ogg; codecs="theora, vorbis" ';
-    video.src = "/my.webm";
+    video.src = "/final_webm_hq.webm";
     video.load(); // must call after setting/changing source
     video.play();
     
