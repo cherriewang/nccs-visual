@@ -158,8 +158,8 @@ DAT.Globe = function(container, opts) {
       var movieMaterial = new THREE.MeshBasicMaterial( { map: videoTexture, overdraw: true, side:THREE.DoubleSide } );
       // the geometry on which the movie will be displayed;
       //    movie image will be scaled to fit these dimensions.
-      var movieGeometry = geometry; //new THREE.SphereGeometry(200, 40, 30);
-      var movieScreen = new THREE.Mesh( movieGeometry, movieMaterial );
+      //var movieGeometry = geometry; new THREE.SphereGeometry(200, 40, 30);
+      var movieScreen = new THREE.Mesh( geometry /*movieGeometry*/, movieMaterial );
       movieScreen.position.set(0,50,0);
       scene.add(movieScreen);
       
