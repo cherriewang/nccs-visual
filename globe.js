@@ -143,8 +143,8 @@ DAT.Globe = function(container, opts) {
   //////////////////////////////
 
       videoImage = document.createElement( 'canvas' );
-      videoImage.width = 4096;
-      videoImage.height = 2049;
+      videoImage.width = 5760;
+      videoImage.height = 2882;
 
       videoImageContext = videoImage.getContext( '2d' );
       // background color if no video present
@@ -160,7 +160,7 @@ DAT.Globe = function(container, opts) {
       //    movie image will be scaled to fit these dimensions.
       //var movieGeometry = geometry; new THREE.SphereGeometry(200, 40, 30);
       var movieScreen = new THREE.Mesh( geometry /*movieGeometry*/, movieMaterial );
-      movieScreen.position.set(0,50,0);
+      movieScreen.position.set(100,50,100);
       scene.add(movieScreen);
       
       camera.position.set(0,150,300);
