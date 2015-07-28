@@ -130,7 +130,7 @@ DAT.Globe = function(container, opts) {
     video = document.createElement( 'video' );
     // video.id = 'video';
     // video.type = ' video/ogg; codecs="theora, vorbis" ';
-    video.src = "/final_webm_hq.webm";
+    video.src = "/final_webm_sq.webm";
     video.load(); // must call after setting/changing source
     video.play();
     
@@ -150,8 +150,8 @@ DAT.Globe = function(container, opts) {
   //////////////////////////////
 
       videoImage = document.createElement( 'canvas' );
-      videoImage.width = 5760;
-      videoImage.height = 2882;
+      videoImage.width = 4096;
+      videoImage.height = 2048;
 
       videoImageContext = videoImage.getContext( '2d' );
       // background color if no video present
