@@ -62,16 +62,23 @@ DAT.Globe = function(container, opts) {
     }
   };
 
+  // STANDARD GLOBAL VARIABLES
   var camera, scene, renderer, w, h;
   var mesh, atmosphere, point;
 
+  // ... extra that maybe is necessary
+  var container;
+
   var overRenderer;
 
-  var video;
+  // CUSTOM GLOBAL VARIABLES
+  var video, videoImage, videoImageContext, videoTexture;
 
+  // setting default values for zoom
   var curZoomSpeed = 0;
   var zoomSpeed = 50;
 
+  // mouse response / controls
   var mouse = { x: 0, y: 0 }, mouseOnDown = { x: 0, y: 0 };
   var rotation = { x: 0, y: 0 },
       target = { x: Math.PI*3/2, y: Math.PI / 6.0 },
@@ -81,9 +88,10 @@ DAT.Globe = function(container, opts) {
   var padding = 40;
   var PI_HALF = Math.PI / 2;
 
-  ////////////////////////
+  /////////////////////////////////////////
   //    INIT FUNCTION
-  ////////////////////////
+  //    BASICALLY CREATES A BUNCH OF STUFF
+  /////////////////////////////////////////
 
   function init() {
 
@@ -276,7 +284,7 @@ DAT.Globe = function(container, opts) {
 
   };
 
-  /*
+  
   function createPoints() {
     if (this._baseGeometry !== undefined) {
       if (this.is_animated === false) {
@@ -303,7 +311,7 @@ DAT.Globe = function(container, opts) {
       }
       //scene.add(this.points);
     }
-    */
+    
   }
 
   function addPoint(lat, lng, size, color, subgeo) {
@@ -431,7 +439,7 @@ DAT.Globe = function(container, opts) {
     renderer.render(scene, camera);
 
     
-     //V VIDEO RELATED
+     // VIDEO RELATED
      if ( video.readyState === video.HAVE_ENOUGH_DATA ) 
      {
        videoImageContext.drawImage( video, 0, 0 );
