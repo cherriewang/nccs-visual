@@ -160,7 +160,7 @@ DAT.Globe = function(container, opts) {
       //    movie image will be scaled to fit these dimensions.
       //var movieGeometry = geometry; new THREE.SphereGeometry(200, 40, 30);
       var movieScreen = new THREE.Mesh( geometry /*movieGeometry*/, movieMaterial );
-      movieScreen.position.set(100,50,100);
+      movieScreen.position.set(0,0,0);
       scene.add(movieScreen);
       
       camera.position.set(0,150,300);
