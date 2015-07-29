@@ -12,11 +12,15 @@ var Timeline = function ( video ) {
 	element.style.position = 'absolute';
 	element.style['z-index'] = '50';
 
+	/* 	DON'T NEED STORM MARKERS FOR NOW
 	var stormmarkers = document.createElement( 'div' );
 	stormmarkers.id = 'stormmarkers';
 	stormmarkers.style.position = 'absolute';
 	stormmarkers.style.top = '0px';	
 	stormmarkers.style.left = '0px';
+	*/
+
+	/* DON'T NEED YEAR MARKERS FOR NOW
 
 	element.appendChild( stormmarkers );
 
@@ -42,6 +46,7 @@ var Timeline = function ( video ) {
 	createYearMarker( 0.21285714285714286 );
 	createYearMarker( 0.6628571428571428 );
 
+	*/
 
 	var onMouseOver = function ( event ) {
 
@@ -143,6 +148,8 @@ var Timeline = function ( video ) {
 	positionTip.setVisible( false );
 	element.appendChild( positionTip.getDomElement() );
 
+
+/*
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function() {
 
@@ -193,7 +200,7 @@ var Timeline = function ( video ) {
 	xhr.overrideMimeType( 'text/plain; charset=x-user-defined' );
 	xhr.setRequestHeader( 'Content-Type', 'text/plain' );
 	xhr.send( null );
-
+*/
 	this.getDomElement = function () {
 
 		return element;
@@ -285,12 +292,4 @@ var Tooltip = function ( color, backgroundColor, className ) {
 
 };
 
-/*function createHurricaneThumbnail(parent,x,y){
-	var img = document.createElement('img');
-	img.src = 'images/hurricane_thumbnail.png';
-	img.className = 'hurricaneThumbnail'; 
-	img.style.position = 'absolute';
-	img.style.left = (x-15) + 'px'; 
-	img.style.top = (y+12) + 'px';
-	parent.appendChild(img);	
-}*/
+
