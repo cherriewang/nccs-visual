@@ -130,7 +130,26 @@ DAT.Globe = function(container, opts) {
     video = document.createElement( 'video' );
     // video.id = 'video';
     // video.type = ' video/ogg; codecs="theora, vorbis" ';
+    <video controls loop>
     video.src = "/final_webm_hq.webm";
+    </video>
+
+    /*
+    ATTEMPTING TO MAKE VIDEO LOOP
+    
+    myVid.setAttribute('src', "videos/clip1.mp4");
+    myVid.autoplay = true;  
+    myVid.addEventListener('ended', vidEnded);  
+
+    function vidEnded()
+    {
+        myVid.setAttribute('src', "videos/clip1.mp4");
+        myVid.autoplay = true;          
+    }
+
+
+    */
+
     video.load(); // must call after setting/changing source
     video.play();
     
