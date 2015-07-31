@@ -1,3 +1,6 @@
+// creates calendar to be used in drop down menu
+// still kind of buggy
+
 var themonth = 1;
 renderCal(themonth);
 

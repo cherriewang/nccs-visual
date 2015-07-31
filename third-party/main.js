@@ -56,7 +56,7 @@ function init() {
 	video = document.createElement('video');
 	video.id = 'cloudvideo';
 
-	// REMOVE THIS FOR NOW BECAUSE I WANT START AT BEGINNING
+	// REMOVE THIS FOR NOW BECAUSE I WANT TO START AT BEGINNING
 	//	start the video at somewhere interesting during the mass hurricane season
 	/*
 	video.addEventListener( 'loadedmetadata', function(e){

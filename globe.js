@@ -1,9 +1,4 @@
-/**
- * dat.globe Javascript WebGL Globe Toolkit
- * http://dataarts.github.com/dat.globe
- * Licensed under the Apache License, Version 2.0 (the 'License');
- * http://www.apache.org/licenses/LICENSE-2.0
- */
+
 
 //  NOTES TO SELF: 
 //  CHECK THREE.DoubleSide
@@ -133,7 +128,7 @@ DAT.Globe = function(container, opts) {
     video.src = "/final_webm_hq.webm";
 
     
-    //ATTEMPTING TO MAKE VIDEO LOOP
+    // VIDEO LOOPING (comment out if you don't need)
 
     video.setAttribute('src', "final_webm_hq.webm");
     video.autoplay = true;  
@@ -205,6 +200,7 @@ DAT.Globe = function(container, opts) {
 
     mesh = new THREE.Mesh(geometry, material);
     mesh.rotation.y = Math.PI;
+    // for some reason this messes it up...
     //scene.add(mesh);
 
     shader = Shaders['atmosphere'];
@@ -256,6 +252,7 @@ DAT.Globe = function(container, opts) {
 
   }
 
+  // this is a function that takes in json data to create data points
   function addData(data, opts) {
     var lat, lng, size, color, i, step, colorFnWrapper;
 
@@ -308,7 +305,7 @@ DAT.Globe = function(container, opts) {
 
   };
 
-  
+  // this function will create data points and add them to the globe 
   function createPoints() {
     if (this._baseGeometry !== undefined) {
       if (this.is_animated === false) {
@@ -333,11 +330,14 @@ DAT.Globe = function(container, opts) {
               morphTargets: true
             }));
       }
+      // uncomment this if you want points
       //scene.add(this.points);
     }
     
   }
 
+
+  // more to do with data points
   function addPoint(lat, lng, size, color, subgeo) {
 
     var phi = (90 - lat) * Math.PI / 180;
@@ -362,6 +362,11 @@ DAT.Globe = function(container, opts) {
     }
     subgeo.merge(point.geometry, point.matrix);
   }
+
+  /////////////////////////////////
+  // INTERFACE FUNCTIONS
+  ////////////////////////////////
+
 
   function onMouseDown(event) {
     event.preventDefault();
@@ -441,10 +446,6 @@ DAT.Globe = function(container, opts) {
   function animate() {
     requestAnimationFrame(animate);
     render();
-     // VIDEO RELATED
-     //requestAnimationFrame( animate );
-     //render();   
-     //update();
   }
 
   function render() {

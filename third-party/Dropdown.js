@@ -1,3 +1,6 @@
+// js for a dropdown calendar menu 
+// -- in progress UI work 
+
 function DropDown(el) {
   this.dd = el;
   this.initEvents();
